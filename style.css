@@ -1,50 +1,166 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-  }
-  body {
-    display: flex;
-    justify-content: center;
-    background-color: #055a87d4;
-  }
-  h1 {
-    display: block;
-    font-size: 24px;
-    margin: 16px 0 2px;
-    color: white;
-    text-align: center;
-    font-weight: 400;
-  }
-  button {
-    background-color: #021a3b;
-    color: white;
-    font-size: 16px;
-    border-radius: 4px;
-    width: 100px;
-    padding: 5px 10px;
-    margin-right: 12px;
-    border: 1px solid #ffffff5e;
-    box-shadow: 0px 0px 10px #00000050;
-    transition: all 0.3s;
-  }
-  button:hover {
-    transform: scale(1.05) translateY(-1px);
-    background-color: #010d1d;
-  }
-  textarea {
-    padding: 8px;
-    font-size: 16px;
-    width: 500px;
-    height: 400px;
-    margin: 3px 0;
-    background-color: #dfe8f6;
-    outline: none;
-    border: 1px solid #202020;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px #00000050;
-  }
-  textarea:focus {
-    background-color: #f4f8fe;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  color: rgb(254, 254, 254);
+}
+
+body {
+  background-color: #055a87d4;
+  margin: 1em 0;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+main>div {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  padding: 1em;
+  height: 100%;
+  width: 100%;
+}
+
+h2,
+h1 {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 10px #0000006e;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: -5px 0 -2px;
+}
+
+form {
+  max-width: 100%;
+  ;
+}
+
+label {
+  text-shadow: 0px 0px 10px #0000006e;
+  font-size: 18px;
+}
+
+input[type="text"] {
+  height: 32px;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 8px;
+}
+
+button {
+  background-color: #001229;
+  background-color: #022552ba;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 100px;
+  padding: 5px 10px;
+  margin-right: 6px;
+  border: 1px solid #c6c5c557;
+  box-shadow: 0px 0px 10px #00000050;
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05) translateY(-1px);
+  background-color: #0f294a;
+}
+
+textarea,
+input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  background-color: #f2f7ff;
+  border: 1px solid #1d1d1d;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #00000050;
+  color: black;
+  font-size: 18px;
+  padding: 5px;
+  width: 100%;
+  margin: 5px 0;
+  transform-style: flat;
+  transition: all .3s;
+}
+
+textarea {
+  height: 350px;
+}
+
+textarea:focus,
+input[type="text"]:focus {
+  background-color: #fefefe;
+  transform: scale(1.01);
+}
+
+#output {
+  position: relative;
+  height: calc(100% - 65px);
+}
+
+#output textarea {
+  height: calc(100%);
+}
+
+#output img {
+  position: absolute;
+  top: 8px;
+  right: 3px;
+  height: 29px;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  background-image: linear-gradient(#f9f9f9, #ececec);;
+  border: 1px solid #bbbbbb;
+  padding: 4px 3px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px #00000029;
+  z-index: 100;
+}
+#out::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 9px solid black;
+  position: absolute;
+  top: 38px;
+  right: 7px;
+  z-index: 200000000000000000000000000;
+}
+#out::after {
+  content: 'copiado';
+  background-color: rgb(0 0 0);
+  color: white;
+  position: absolute;
+  top: 45px;
+  right: -12px;
+  padding: 2px 4px;
+  display: flex;
+  border-radius: 3px;
+  z-index: 200;
+}
+
+#copy-check.none ~ #output::after {
+  display: block;
+}
+
