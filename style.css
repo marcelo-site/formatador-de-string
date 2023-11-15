@@ -135,7 +135,7 @@ input[type="text"]:focus {
   box-shadow: 0px 0px 5px #00000029;
   z-index: 100;
 }
-#out::before {
+#msg::before {
   content: '';
   width: 0;
   height: 0;
@@ -147,7 +147,7 @@ input[type="text"]:focus {
   right: 7px;
   z-index: 200000000000000000000000000;
 }
-#out::after {
+#msg::after {
   content: 'copiado';
   background-color: rgb(0 0 0);
   color: white;
